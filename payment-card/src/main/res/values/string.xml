@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="payment_card_cvv">CVV</string>
+    <string name="payment_card_good_thru" tools:ignore="Typos">Good thru</string>
+    <string name="payment_card_valid_thru" tools:ignore="Typos">Valid thru</string>
+
+    <string name="payment_card_american_express">American Express</string>
+</resources>
