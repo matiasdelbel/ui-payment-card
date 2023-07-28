@@ -21,6 +21,12 @@ dependencies {
 gradlePlugin {
     plugins {
 
+        /* Set up the basic configuration for an android app. */
+        register("com.dbel.android.application") {
+            id = "com.dbel.android.application"
+            implementationClass = "com.dbel.gradle.AndroidApplicationPlugin"
+        }
+
         /* Set up the basic configuration for an android module. */
         register("com.dbel.android.library") {
             id = "com.dbel.android.library"
