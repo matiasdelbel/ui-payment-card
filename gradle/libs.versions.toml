@@ -15,3 +15,10 @@ androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "u
 androidx-constraintlayout-compose = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version = "1.0.1" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version = "1.10.1" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version = "2.6.1" }
+
+[plugins]
+android-application = { id = "com.dbel.android.application", version = "1.0.0" }
+android-application-compose = { id = "com.dbel.android.application.compose", version = "1.0.0" }
+
+android-library = { id = "com.dbel.android.library", version = "1.0.0" }
+android-library-compose = { id = "com.dbel.android.library.compose", version = "1.0.0" }

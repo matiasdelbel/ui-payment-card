@@ -1,6 +1,7 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("com.dbel.android.library")
-    id("com.dbel.android.library.compose")
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.android.library.compose)
 }
 
 android {
