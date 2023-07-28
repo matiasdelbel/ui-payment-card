@@ -105,7 +105,7 @@ fun DinersCardFront(
 
         CardNumber(
             number = dinersFormatter(cardNumber),
-            color = paymentCardColors.font,
+            color = paymentCardColors.text,
             modifier = Modifier.constrainAs(cardNumberRef) {
                 top.linkTo(parent.top)
                 start.linkTo(parent.start)
@@ -116,7 +116,7 @@ fun DinersCardFront(
 
         CardHolderName(
             name = cardHolderName,
-            color = paymentCardColors.font,
+            color = paymentCardColors.text,
             modifier = Modifier.constrainAs(cardHolderNameRef) {
                 bottom.linkTo(expirationDateRef.top)
                 start.linkTo(parent.start)
@@ -126,7 +126,7 @@ fun DinersCardFront(
         HorizontalExpirationDate(
             label = paymentCardTexts.validThru,
             date = expirationDate,
-            color = paymentCardColors.font,
+            color = paymentCardColors.text,
             modifier = Modifier.constrainAs(expirationDateRef) {
                 bottom.linkTo(parent.bottom)
                 end.linkTo(parent.end, margin = 16.dp)

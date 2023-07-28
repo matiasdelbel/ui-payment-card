@@ -72,7 +72,7 @@ fun AmericanExpress(
 
         SecurityCode(
             label = paymentCardTexts.cvv,
-            color = paymentCardColors.font,
+            color = paymentCardColors.text,
             code = securityCode,
             modifier = Modifier.constrainAs(securityCodeRef) {
                 bottom.linkTo(cardNumberRef.top, margin = 8.dp)
@@ -82,7 +82,7 @@ fun AmericanExpress(
 
         CardNumber(
             number = americanExpressFormatter(cardNumber),
-            color = paymentCardColors.font,
+            color = paymentCardColors.text,
             modifier = Modifier.constrainAs(cardNumberRef) {
                 top.linkTo(parent.top)
                 start.linkTo(parent.start)
@@ -94,7 +94,7 @@ fun AmericanExpress(
         VerticalExpirationDate(
             label = paymentCardTexts.validThru,
             date = expirationDate,
-            color = paymentCardColors.font,
+            color = paymentCardColors.text,
             modifier = Modifier.constrainAs(expirationDateRef) {
                 bottom.linkTo(cardHolderNameRef.top, margin = 4.dp)
                 start.linkTo(parent.start)
@@ -103,7 +103,7 @@ fun AmericanExpress(
 
         CardHolderName(
             name = cardHolderName,
-            color = paymentCardColors.font,
+            color = paymentCardColors.text,
             modifier = Modifier.constrainAs(cardHolderNameRef) {
                 bottom.linkTo(parent.bottom)
                 start.linkTo(parent.start)

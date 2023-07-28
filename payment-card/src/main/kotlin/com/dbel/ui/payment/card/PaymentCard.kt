@@ -121,7 +121,7 @@ fun PaymentCardFront(
         ) {
             CardNumber(
                 number = cardNumberFormatter(cardNumber),
-                color = paymentCardColors.font
+                color = paymentCardColors.text
             )
 
             Row(
@@ -133,7 +133,7 @@ fun PaymentCardFront(
                 HorizontalExpirationDate(
                     label = paymentCardTexts.validThru,
                     date = expirationDate,
-                    color = paymentCardColors.font,
+                    color = paymentCardColors.text,
                     modifier = Modifier.padding(top = 4.dp)
                 )
             }
@@ -147,7 +147,7 @@ fun PaymentCardFront(
         ) {
             CardHolderName(
                 name = cardHolderName,
-                color = paymentCardColors.font,
+                color = paymentCardColors.text,
                 modifier = Modifier
                     .padding(top = 8.dp)
                     .weight(1f)
@@ -175,7 +175,7 @@ fun PaymentCardBack(
 
         Row(modifier = Modifier.padding(top = 8.dp)) {
             Spacer(modifier = Modifier.fillMaxWidth(fraction = 0.7f))
-            SecurityCode(label = paymentCardTexts.cvv, code = securityCode, color = paymentCardColors.font)
+            SecurityCode(label = paymentCardTexts.cvv, code = securityCode, color = paymentCardColors.text)
         }
     }
 }
@@ -319,7 +319,7 @@ object PaymentCardDefaults {
 data class PaymentCardColors internal constructor(
     val background: Color,
     val magneticStripe: Color,
-    val font: Color,
+    val text: Color,
 )
 
 @Immutable
