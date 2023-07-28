@@ -1,50 +1,44 @@
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
-    id 'com.dbel.android.application.compose'
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("com.dbel.android.application.compose")
 }
 
+
 android {
-    namespace 'com.dbel.ui.payment.card'
-    compileSdk 33
+    namespace = "com.dbel.ui.payment.card"
+    compileSdk = 33
 
     defaultConfig {
-        applicationId "com.dbel.ui.payment.card"
-        minSdk 24
-        targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        applicationId = "com.dbel.ui.payment.card"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables { useSupportLibrary true }
+        minSdk = 24
+        targetSdk = 33
+        versionCode = 1
+        versionName = "1.0"
+
+        vectorDrawables { useSupportLibrary = true }
     }
 
     buildTypes {
-
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
-    }
-
-    packagingOptions {
-        resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
-        }
+        jvmTarget = "1.8"
     }
 }
 
 dependencies {
-    implementation project(":payment-card")
+    implementation(project(":payment-card"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
