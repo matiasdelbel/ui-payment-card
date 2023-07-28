@@ -1,12 +1,16 @@
+rootProject.name = "ui-payment-card"
+
 pluginManagement {
     includeBuild("build-logic")
 
     repositories {
+        gradlePluginPortal()
+
         google()
         mavenCentral()
-        gradlePluginPortal()
     }
 }
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 
@@ -15,7 +19,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "ui-payment-card"
 
+/* Modules in the project */
 include(":app")
 include(":payment-card")

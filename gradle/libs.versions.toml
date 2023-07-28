@@ -17,6 +17,10 @@ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version = "1.1
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version = "2.6.1" }
 
 [plugins]
+com-android-application = { id = "com.android.application", version = "8.0.2" }
+com-android-library = { id = "com.android.library", version = "8.0.2" }
+org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version = "1.8.10" }
+
 android-application = { id = "com.dbel.android.application", version = "1.0.0" }
 android-application-compose = { id = "com.dbel.android.application.compose", version = "1.0.0" }
 
