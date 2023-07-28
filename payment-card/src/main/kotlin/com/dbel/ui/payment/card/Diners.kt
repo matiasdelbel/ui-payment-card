@@ -123,7 +123,7 @@ fun DinersCardFront(
             }
         )
 
-        ExpirationDate(
+        HorizontalExpirationDate(
             label = paymentCardTexts.validThru,
             date = expirationDate,
             color = paymentCardColors.font,

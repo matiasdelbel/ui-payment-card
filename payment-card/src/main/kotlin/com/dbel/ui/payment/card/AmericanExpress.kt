@@ -91,11 +91,10 @@ fun AmericanExpress(
             }
         )
 
-        ExpirationDate(
+        VerticalExpirationDate(
             label = paymentCardTexts.validThru,
             date = expirationDate,
             color = paymentCardColors.font,
-            orientation = ExpirationDate.Vertical,
             modifier = Modifier.constrainAs(expirationDateRef) {
                 bottom.linkTo(cardHolderNameRef.top, margin = 4.dp)
                 start.linkTo(parent.start)

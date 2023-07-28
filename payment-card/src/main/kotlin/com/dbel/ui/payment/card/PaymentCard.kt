@@ -130,7 +130,7 @@ fun PaymentCardFront(
                     .padding(top = 4.dp)
             ) {
                 Spacer(modifier = Modifier.fillMaxWidth(fraction = 0.5f))
-                ExpirationDate(
+                HorizontalExpirationDate(
                     label = paymentCardTexts.validThru,
                     date = expirationDate,
                     color = paymentCardColors.font,
@@ -206,45 +206,48 @@ fun CardHolderName(
 )
 
 @Composable
-fun ExpirationDate(
+fun HorizontalExpirationDate(
     label: String,
     date: String,
     color: Color,
     modifier: Modifier = Modifier,
-    orientation: ExpirationDate.Orientation = ExpirationDate.Horizontal
+) = Row(
+    verticalAlignment = Alignment.Bottom,
+    modifier = modifier
 ) {
-    when (orientation) {
-        ExpirationDate.Horizontal -> Row(
-            verticalAlignment = Alignment.Bottom,
-            modifier = modifier
-        ) {
-            Text(
-                text = label.replace(oldValue = " ", newValue = "\n").uppercase(),
-                color = color,
-                style = MaterialTheme.typography.labelSmall
-            )
-            Text(
-                text = date,
-                color = color,
-                modifier = Modifier.padding(start = 8.dp)
-            )
-        }
-        ExpirationDate.Vertical -> Column(
-            modifier = modifier,
-            horizontalAlignment = Alignment.Start
-        ) {
-            Text(
-                text = label.uppercase(),
-                color = color,
-                style = MaterialTheme.typography.labelSmall
-            )
-            Text(
-                text = date,
-                color = color,
-            )
-        }
-    }
+    Text(
+        text = label.replace(oldValue = " ", newValue = "\n").uppercase(),
+        color = color,
+        style = MaterialTheme.typography.labelSmall
+    )
+    Text(
+        text = date,
+        color = color,
+        modifier = Modifier.padding(start = 8.dp)
+    )
 }
+
+@Composable
+fun VerticalExpirationDate(
+    label: String,
+    date: String,
+    color: Color,
+    modifier: Modifier = Modifier,
+) = Column(
+    modifier = modifier,
+    horizontalAlignment = Alignment.Start
+) {
+    Text(
+        text = label.uppercase(),
+        color = color,
+        style = MaterialTheme.typography.labelSmall
+    )
+    Text(
+        text = date,
+        color = color,
+    )
+}
+
 @Composable
 fun MagneticStripe(
     color: Color,
@@ -310,13 +313,6 @@ object PaymentCardDefaults {
         cvv: String = LocalContext.current.getString(R.string.payment_card_cvv),
         validThru: String = LocalContext.current.getString(R.string.payment_card_valid_thru),
     ) = PaymentCardTexts(validThru, cvv)
-}
-
-object ExpirationDate {
-    sealed interface Orientation
-
-    object Horizontal : Orientation
-    object Vertical : Orientation
 }
 
 @Immutable
