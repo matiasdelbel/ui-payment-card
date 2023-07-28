@@ -1,6 +1,6 @@
 plugins {
     id("com.dbel.android.library")
-    // TODO use com.dbel.android.compose plugin
+    id("com.dbel.android.library.compose")
 }
 
 android {
@@ -10,10 +10,6 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
-
-    buildFeatures { compose = true }
-
-    composeOptions { kotlinCompilerExtensionVersion = "1.4.4" }
 
     buildTypes {
         release {
@@ -45,7 +41,4 @@ dependencies {
 
     testImplementation("junit:junit:4.13.2")
     testImplementation("com.google.truth:truth:1.1.4")
-
-    androidTestImplementation("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 }
